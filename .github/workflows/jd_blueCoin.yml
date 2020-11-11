@@ -7,8 +7,8 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 16 * * *'
-  watch:
-    types: started
+  # watch:
+  #   types: started
   repository_dispatch:
     types: blueCoin
 jobs:
@@ -31,8 +31,8 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: npm install
-        run: | # '运行 【京小超兑换奖品】'
+      - name: '运行 【京小超兑换奖品】'
+        run: | 
           cd ~/scripts
           npm install
           node jd_blueCoin.js

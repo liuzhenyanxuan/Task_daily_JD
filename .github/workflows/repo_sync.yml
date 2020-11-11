@@ -1,13 +1,13 @@
 # File: .github/workflows/repo-sync.yml
-name: sync-lxk0301-scripts
+name: 同步 Github Actions
 on:
   schedule:
     - cron: '1 0,15 * * *'
   workflow_dispatch:
-  watch:
-    types: started
+  # watch:
+  #   types: started
   push:
-    branches: [ master ]
+    branches: [ main ]
   repository_dispatch:
     types: sync-scripts
 jobs:
@@ -26,6 +26,6 @@ jobs:
         if: env.PAT
         with:
           source_repo: "https://github.com/lifeishard4me/Actions.git"
-          source_branch: "master"
-          destination_branch: "master"
+          source_branch: "main"
+          destination_branch: "main"
           github_token: ${{ secrets.PAT }}
