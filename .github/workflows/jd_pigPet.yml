@@ -1,4 +1,5 @@
-name: jd_joy_feedPets
+name: jd_pigPet
+
 on:
   workflow_dispatch:
   schedule:
