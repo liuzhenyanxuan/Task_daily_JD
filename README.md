@@ -7,7 +7,7 @@
 >原仓库地址：https://github.com/lxk0301/jd_scripts
 
 ### 使用
-- `fork`后触发 Github Action即可
+- `fork`后,设置相应的'Secrets'，然后触发 Github Action即可
 
 ### 说明
 
