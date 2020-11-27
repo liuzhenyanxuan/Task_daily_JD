@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 IFS="@"
 FRUITSHARECODES_ARR=($FRUITSHARECODES)
