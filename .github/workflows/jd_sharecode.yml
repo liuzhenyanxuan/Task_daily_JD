@@ -21,7 +21,7 @@ jobs:
         run: |
           cd ~/Actions/.github
           chmod +x jd_sharecodes.sh
-          bash -c jd_sharecodes.sh
+          ./jd_sharecodes.sh
         env:
           PETSHARECODES: ${{ secrets.PETSHARECODES }}
           FRUITSHARECODES: ${{ secrets.FRUITSHARECODES }}
