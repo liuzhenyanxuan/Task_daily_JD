@@ -15,7 +15,8 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
       - name: 提交互助码
-        run: |
+        uses: jcblw/bash@1.0.0
+        with:
           IFS = "@"
           FRUITSHARECODES_ARR=($FRUITSHARECODES)
           PETSHARECODES_ARR=($PETSHARECODES)
