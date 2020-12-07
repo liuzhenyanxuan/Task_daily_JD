@@ -6,7 +6,7 @@ name: jd_split
 on:
   workflow_dispatch:
   schedule:
-    - cron: '45 15 * * *'
+    - cron: '2 16 * * *'
   # watch:
   #       types: started
   repository_dispatch:
