@@ -39,7 +39,8 @@ jobs:
           node jd_watch.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          JD_DEBUG: ${{ secrets.JD_DEBUG }}          PUSH_KEY: ${{ secrets.PUSH_KEY }}
+          JD_DEBUG: ${{ secrets.JD_DEBUG }}          
+          PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_USER_ID: ${{ secrets.TG_USER_ID }}

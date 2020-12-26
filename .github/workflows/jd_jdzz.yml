@@ -40,7 +40,7 @@ jobs:
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
-	  JDZZ_SHARECODES: ${{ secrets.JDZZ_SHARECODES }}
+          JDZZ_SHARECODES: ${{ secrets.JDZZ_SHARECODES }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
