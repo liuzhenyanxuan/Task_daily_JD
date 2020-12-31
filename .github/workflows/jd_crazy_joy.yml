@@ -7,7 +7,7 @@ name:  jd_crazy_joy crazyJoy任务
 on:
   workflow_dispatch:
   schedule:
-    - cron: '* 23 * * *'
+    - cron: '0 23 * * *'
   # watch:
   #   types: started
   repository_dispatch:
