@@ -7,7 +7,7 @@ name:  jd_crazy_joy_coin 挂机领金币/宝箱专用
 on:
   workflow_dispatch:
   #schedule:
-   # - cron: '0 17,2,10 * * *'
+    - cron: '0 17,2,10 * * *'
   # watch:
   #   types: started
   repository_dispatch:
