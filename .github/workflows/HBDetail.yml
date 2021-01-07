@@ -6,7 +6,7 @@ name: HBDetail 红包到期提醒
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '0 0 * * *'
   # watch:
   #       types: started
   repository_dispatch:
