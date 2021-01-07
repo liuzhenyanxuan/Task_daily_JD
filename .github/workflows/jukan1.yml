@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: HBDetail 红包到期提醒
+name: jukan 聚看点
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '20 */2 * * *'
   # watch:
-  #       types: started
+  #   types: started
   repository_dispatch:
-    types: bean_home
+    types: Jukan
 jobs:
   build:
 
@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone  https://github.com/nbzongzong/jd_scripts1207.git ~/scripts
+          git clone https://github.com/promise821/jd_scripts1207.git ~/scripts
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -31,17 +31,16 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: '运行 【红包到期提醒】'
-        run: |
-          cd  ~/scripts
-          npm install
-          node HBDetail.js
+      - name: '运行 【聚看点】'
+        run: | 
+          cd ~/scripts
+          npm install 
+          node Scripts-master/Task/jukan.js
         env:
-        
-          JD_COOKIE: ${{ secrets.JD_COOKIE }} 
-          #京东日志打印
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
 
+          JUKAN_BODY: ${{ secrets.JUKAN_BODY }}
 
           #微信酱
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
@@ -61,6 +60,6 @@ jobs:
           #酷推(Cool Push)推送
           QQ_SKEY: ${{ secrets.QQ_SKEY }}
           QQ_MODE: ${{ secrets.QQ_MODE }}
-          #pushplus推送
+                    #pushplus推送
           PUSH_PLUS_TOKEN: ${{ secrets.PUSH_PLUS_TOKEN }}
-          PUSH_PLUS_USER: ${{ secrets.PUSH_PLUS_USER }}
+   
