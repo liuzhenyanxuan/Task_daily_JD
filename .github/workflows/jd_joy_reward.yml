@@ -6,7 +6,7 @@ name: jd_joy_reward 宠汪汪积分兑换京豆
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */4 * * *'
+    - cron: '55 3,7,15,23 * * *'
   # watch:
   #   types: started
   repository_dispatch:
