@@ -58,8 +58,10 @@ jobs:
           #酷推(Cool Push)推送
           QQ_SKEY: ${{ secrets.QQ_SKEY }}
           QQ_MODE: ${{ secrets.QQ_MODE }}
-                    #pushplus推送
+          #pushplus推送
           PUSH_PLUS_TOKEN: ${{ secrets.PUSH_PLUS_TOKEN }}
           PUSH_PLUS_USER: ${{ secrets.PUSH_PLUS_USER }}
-
+          #万能推
+          ALLIN_KEY: ${{ secrets.ALLIN_KEY }} 
+          NOTICE_ID: ${{ secrets.NOTICE_ID }}
           
