@@ -6,7 +6,7 @@ name: jd_joy_feedPets 宠汪汪喂食脚本
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: '0 */3 * * *'
   # watch:
   #   types: [started]
   repository_dispatch:
