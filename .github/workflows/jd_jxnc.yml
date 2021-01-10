@@ -40,7 +40,7 @@ jobs:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           
-          JXNCSHARECODES: ${{ secrets.JXNCSHARECODES }}
+          JXNC_SHARECODES: ${{ secrets.JXNC_SHARECODES }}
           #微信酱
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           #BARK推送
