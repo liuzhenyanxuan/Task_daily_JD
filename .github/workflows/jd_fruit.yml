@@ -31,13 +31,12 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: '运行 【东东农场&jx_nc.js】'
+      - name: '运行 【东东农场】'
         run: |
           cd  ~/scripts
           npm install
           node jd_fruit.js
-          wget https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_nc.js
-          node jx_nc.js
+
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
@@ -64,6 +63,6 @@ jobs:
           #酷推(Cool Push)推送
           QQ_SKEY: ${{ secrets.QQ_SKEY }}
           QQ_MODE: ${{ secrets.QQ_MODE }}
-                    #pushplus推送
+          #pushplus推送
           PUSH_PLUS_TOKEN: ${{ secrets.PUSH_PLUS_TOKEN }}
           PUSH_PLUS_USER: ${{ secrets.PUSH_PLUS_USER }}
