@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
-      - name: jd_car
+      - name: UploadShareCodes
         run: |
           git clone https://github.com/nbzongzong/jd_scripts1207.git ~/scripts
       - name: Use Node.js ${{ matrix.node-version }}
