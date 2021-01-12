@@ -10,7 +10,7 @@ on:
   # watch:
   #       types: started
   repository_dispatch:
-    types: bean_home
+    types: HBDetail
 jobs:
   build:
 
@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone  https://github.com/nbzongzong/jd_scripts1207.git ~/scripts
+          git clone  https://github.com/Aerozb/JD_HongBaoDetails.git ~/scripts
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
