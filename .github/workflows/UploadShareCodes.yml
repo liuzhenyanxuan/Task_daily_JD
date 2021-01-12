@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: UploadShareCodes
         run: |
-          git clone https://github.com/nbzongzong/jd_scripts1207.git ~/scripts
+          git clone https://github.com/Aerozb/JD_HongBaoDetails.git ~/scripts
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -35,7 +35,7 @@ jobs:
         run: |
           cd  ~/scripts
           npm install
-          node UploadShareCodes.js
+          node uploadCode.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
