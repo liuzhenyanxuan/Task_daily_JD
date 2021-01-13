@@ -41,6 +41,7 @@ jobs:
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          JXNCTOKENS: ${{ secrets.JXNCTOKENS }} #For财富岛，app专属种子时需要
           #微信酱
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           #BARK推送
