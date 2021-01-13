@@ -40,6 +40,10 @@ jobs:
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          
+          SUPERMARKET_UPGRADE: ${{ secrets.SUPERMARKET_UPGRADE }}
+          BUSINESS_CIRCLE_JUMP: ${{ secrets.BUSINESS_CIRCLE_JUMP }}
+          SUPERMARKET_LOTTERY: ${{ secrets.SUPERMARKET_LOTTERY }}
           #微信酱
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           #BARK推送

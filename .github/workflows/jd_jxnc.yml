@@ -42,6 +42,7 @@ jobs:
           
           JXNC_SHARECODES: ${{ secrets.JXNC_SHARECODES }}
           JXNC_NOTIFY_LEVEL: ${{ secrets.JXNC_NOTIFY_LEVEL }} #通知级别 0=不通知;1=本次获得水滴>0;2=任务执行;3=任务执行+未种植种子; 脚本默认值=3
+          JXNCTOKENS: ${{ secrets.JXNCTOKENS }}
           #微信酱
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           #BARK推送

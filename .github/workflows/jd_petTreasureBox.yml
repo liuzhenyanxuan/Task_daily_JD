@@ -40,6 +40,9 @@ jobs:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           
+          PET_NOTIFY_CONTROL: ${{ secrets.PET_NOTIFY_CONTROL }}
+          PETSHARECODES: ${{ secrets.PETSHARECODES }}         
+          
           #微信酱
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           #BARK推送

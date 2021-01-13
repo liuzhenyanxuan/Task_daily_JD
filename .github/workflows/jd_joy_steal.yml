@@ -39,11 +39,8 @@ jobs:
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          
           JOY_HELP_FEED: ${{ secrets.JOY_HELP_FEED }}
-          JOY_FEED_COUNT: ${{ secrets.JOY_FEED_COUNT }}
-          JOY_RUN_FLAG: ${{ secrets.JOY_RUN_FLAG }}
-          JOY_TEAM_LEVEL: ${{ secrets.JOY_TEAM_LEVEL }}
-          JD_JOY_REWARD_NAME: ${{ secrets.JD_JOY_REWARD_NAME }}
           #微信酱
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           #BARK推送
