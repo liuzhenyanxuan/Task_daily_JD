@@ -36,7 +36,7 @@ jobs:
           cd  ~/scripts
           npm install
           node jd_speed.js
-          wget https://raw.githubusercontent.com/MoPoQAQ/Script/main/Me/jx_cfd.js
+          # wget https://raw.githubusercontent.com/MoPoQAQ/Script/main/Me/jx_cfd.js
           node jx_cfd.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
