@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/lifeishard4me/Actions.git ~/Actions
+          git clone https://github.com/nbzongzong/Actions.git ~/Actions
       - name: 提交互助码
         run: |
           cd ~/Actions/.github
@@ -32,3 +32,4 @@ jobs:
           DREAM_FACTORY_SHARE_CODES: ${{ secrets.DREAM_FACTORY_SHARE_CODES }}
           JDZZ_INVITECODES: ${{ secrets.JDZZ_INVITECODES }}
           JDJOY_SHARECODES: ${{ secrets.JDJOY_SHARECODES }}
+          JD_CASH_SHARECODES: ${{ secrets.JD_CASH_SHARECODES }}
