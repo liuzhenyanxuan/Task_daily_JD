@@ -6,7 +6,7 @@ name: jd_nianCollect 京东炸年兽领爆竹
 on:
   workflow_dispatch:
   schedule:
-    - cron: '10 * * * *'
+    - cron: '25 * * * *'
   # watch:
   #   types: started
   repository_dispatch:
