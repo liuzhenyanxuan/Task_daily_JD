@@ -1,12 +1,12 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 互助码自动获取&提交
+name: 互助码获取&整理
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 16,19,22,0 1,2,10,11,20,21,30,31 * *'
+  #schedule:
+  #  - cron: '0 16,19,22,0 1,2,10,11,20,21,30,31 * *'
   # watch:
   #   types: started
   repository_dispatch:
@@ -31,11 +31,11 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: '运行 【互助码自动获取&提交】'
+      - name: '运行 【互助码获取&整理】'
         run: |
           cd  ~/scripts
           npm install
-          node uploadCode.js
+          node getAllCode.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
@@ -57,6 +57,6 @@ jobs:
           #酷推(Cool Push)推送
           QQ_SKEY: ${{ secrets.QQ_SKEY }}
           QQ_MODE: ${{ secrets.QQ_MODE }}
-                    #pushplus推送
+          #pushplus推送
           PUSH_PLUS_TOKEN: ${{ secrets.PUSH_PLUS_TOKEN }}
           PUSH_PLUS_USER: ${{ secrets.PUSH_PLUS_USER }}
