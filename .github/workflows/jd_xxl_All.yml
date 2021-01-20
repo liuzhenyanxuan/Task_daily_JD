@@ -1,11 +1,11 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-# jd_xxl,jd_xxl_gh,jd_nianCollect,jd_jdfactory
-name: 东东&个护爱消除&年兽领爆竹&东东工厂
+# jd_xxl,jd_xxl_gh,jd_gyec,jd_nianCollect,jd_jdfactory
+name: 东东/个护/工业品爱消除&年兽领爆竹&东东工厂
 on:
   workflow_dispatch:
   schedule:
-    - cron: '40 * * * *'
+    - cron: '30 * * * *'
   # watch:
   #   types: started
   repository_dispatch:
@@ -30,18 +30,20 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: '运行 【东东&个护爱消除&年兽领爆竹🧨&东东工厂】'
+      - name: '运行 【东东/个护/工业品爱消除&年兽领爆竹🧨&东东工厂】'
         run: | 
           cd ~/scripts
           npm install 
           node jd_xxl.js
           node jd_xxl_gh.js
+          node jd_gyec.js
           node jd_nianCollect.js
           node jd_jdfactory.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
-          EXCHANGE_EC: ${{ secrets.EXCHANGE_EC }}   #默认值=京豆*1888
+          EXCHANGE_EC: ${{ secrets.EXCHANGE_EC }}   #默认=京豆*1888
+          EXCHANGE_GYEC: ${{ secrets.EXCHANGE_GYEC }} #默认=1888京豆
           FACTORAY_WANTPRODUCT_NAME: ${{ secrets.FACTORAY_WANTPRODUCT_NAME }}
           DDFACTORY_SHARECODES: ${{ secrets.DDFACTORY_SHARECODES }}          
           #微信酱
