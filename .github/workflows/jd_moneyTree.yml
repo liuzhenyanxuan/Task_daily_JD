@@ -4,7 +4,7 @@
 name: jd_moneyTree 京东摇钱树
 
 on:
-
+  workflow_dispatch:
   schedule:
     - cron: '40 */2 * * *'
   # watch:
