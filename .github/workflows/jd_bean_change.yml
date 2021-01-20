@@ -1,12 +1,12 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-name: jd_bean_change 京豆变动通知
+# jd_bean_change,HBDetail
+name: 京豆变动&红包到期通知
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '0 0 * * *'
   # watch:
   #   types: started
   repository_dispatch:
@@ -31,11 +31,12 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: '运行 【京豆变动通知】'
+      - name: '运行 【京豆变动&红包到期通知】'
         run: | 
           cd ~/scripts
           npm install 
           node jd_bean_change.js
+          node HBDetail.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}

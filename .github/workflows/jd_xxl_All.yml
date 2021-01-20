@@ -1,17 +1,15 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-# jd_jdzz,jd_cash,jd_lotteryMachine,jd_rankingList,jd_shop,jd_small_home
-
-name:   京东赚赚&签到领现金&京东抽奖机&京东排行榜&进店领豆&东东小窝
-
+# jd_xxl,jd_xxl_gh,jd_nianCollect,jd_jdfactory
+name: 东东&个护爱消除&年兽领爆竹&东东工厂
 on:
   workflow_dispatch:
   schedule:
-    - cron: '10 16 * * *'
+    - cron: '40 * * * *'
   # watch:
   #   types: started
   repository_dispatch:
-    types: jdzz
+    types: jd_xxl
 jobs:
   build:
 
@@ -32,22 +30,20 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: '运行 【京东赚赚&签到领现金&京东抽奖机&京东排行榜&东东小窝】'
-        run: |  
+      - name: '运行 【东东&个护爱消除&年兽领爆竹🧨&东东工厂】'
+        run: | 
           cd ~/scripts
           npm install 
-          node jd_jdzz.js
-          node jd_cash.js
-          node jd_lotteryMachine.js
-          node jd_rankingList.js
-          node jd_shop.js 
-          node jd_small_home.js          
+          node jd_xxl.js
+          node jd_xxl_gh.js
+          node jd_nianCollect.js
+          node jd_jdfactory.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
- 
-          JDZZ_SHARECODES: ${{ secrets.JDZZ_SHARECODES}}
-          JD_CASH_SHARECODES: ${{ secrets.JD_CASH_SHARECODES }}
+          EXCHANGE_EC: ${{ secrets.EXCHANGE_EC }}   #默认值=京豆*1888
+          FACTORAY_WANTPRODUCT_NAME: ${{ secrets.FACTORAY_WANTPRODUCT_NAME }}
+          DDFACTORY_SHARECODES: ${{ secrets.DDFACTORY_SHARECODES }}          
           #微信酱
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           #BARK推送
@@ -66,6 +62,6 @@ jobs:
           #酷推(Cool Push)推送
           QQ_SKEY: ${{ secrets.QQ_SKEY }}
           QQ_MODE: ${{ secrets.QQ_MODE }}
-          #pushplus推送
+                    #pushplus推送
           PUSH_PLUS_TOKEN: ${{ secrets.PUSH_PLUS_TOKEN }}
           PUSH_PLUS_USER: ${{ secrets.PUSH_PLUS_USER }}

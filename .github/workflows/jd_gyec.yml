@@ -38,6 +38,7 @@ jobs:
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          EXCHANGE_GYEC: ${{ secrets.EXCHANGE_GYEC }} #不填默认1888京豆
           #微信酱
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           #BARK推送
