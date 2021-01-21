@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-# jd_syj,
-name: 京豆十元街&小鸽有礼[2021-2-19 end]
+# jd_bean_sign,jx_sign,jd_car,jd_kd,jd_club_lottery,jd_pigPet
+name: 合集-京豆_京喜_快递签到&京东汽车&摇京豆&京东金融养猪猪
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '10 7 * * *'
-  # watch:
-  #   types: started
+    - cron: '0 16 * * *'
+  watch:
+  types: started
   repository_dispatch:
-    types: syj
+    types: sgin
 jobs:
   build:
 
@@ -31,16 +31,22 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: '运行 【京豆十元街&小鸽有礼】'
+      - name: '运行 【京豆签到&京喜签到&京东汽车&京东快递签到&摇京豆脚本&京东金融养猪猪】'
         run: |  
           cd ~/scripts
           npm install 
-          node jd_syj.js
-          node jd_xg.js
+          node jd_bean_sign.js
+          node jx_sign.js
+          node jd_car.js
+          node jd_kd.js
+          node jd_club_lottery.js
+          node jd_pigPet.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
-          
+          JD_BEAN_STOP: ${{secrets.JD_BEAN_STOP}} #自定义延迟签到,单位毫秒. 默认分批并发无延迟. 延迟作用于每个签到接口, 如填入延迟则切换顺序签到(耗时较长)
+          JD_BEAN_SIGN_STOP_NOTIFY: ${{secrets.JD_BEAN_SIGN_STOP_NOTIFY}}
+          JD_BEAN_SIGN_NOTIFY_SIMPLE: ${{secrets.JD_BEAN_SIGN_NOTIFY_SIMPLE}}
           #微信酱
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           #BARK推送
@@ -59,6 +65,6 @@ jobs:
           #酷推(Cool Push)推送
           QQ_SKEY: ${{ secrets.QQ_SKEY }}
           QQ_MODE: ${{ secrets.QQ_MODE }}
-          #pushplus推送
+                    #pushplus推送
           PUSH_PLUS_TOKEN: ${{ secrets.PUSH_PLUS_TOKEN }}
           PUSH_PLUS_USER: ${{ secrets.PUSH_PLUS_USER }}

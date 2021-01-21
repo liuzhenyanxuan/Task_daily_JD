@@ -1,16 +1,15 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-# jd_joy_feedPets,jd_joy_steal,jd_daily_egg,jd_superMarket
-name:  宠汪汪喂食&偷狗粮&天天提鹅&东东超市
-
+# jd_xxl,jd_xxl_gh,jd_gyec,jd_nianCollect,jd_jdfactory
+name: 合集-东东_个护_工业品爱消除&年兽领爆竹&东东工厂
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */3 * * *'
-  # watch:
-  #   types: [started]
+    - cron: '30 * * * *'
+  watch:
+  types: started
   repository_dispatch:
-    types: joy_feedPets
+    types: jd_xxl
 jobs:
   build:
 
@@ -31,23 +30,22 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: '运行 【宠汪汪喂食&偷狗粮&天天提鹅&东东超市】'
-        run: |
-          cd  ~/scripts
-          npm install
-          node jd_joy_feedPets.js
-          node jd_joy_steal.js
-          node jd_daily_egg.js
-          node jd_superMarket.js
+      - name: '运行 【东东/个护/工业品爱消除&年兽领爆竹🧨&东东工厂】'
+        run: | 
+          cd ~/scripts
+          npm install 
+          node jd_xxl.js
+          node jd_xxl_gh.js
+          node jd_gyec.js
+          node jd_nianCollect.js
+          node jd_jdfactory.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
-          JOY_FEED_COUNT: ${{ secrets.JOY_FEED_COUNT }}
-          JOY_HELP_FEED: ${{ secrets.JOY_HELP_FEED }}
-          SUPERMARKET_UPGRADE: ${{ secrets.SUPERMARKET_UPGRADE }}
-          BUSINESS_CIRCLE_JUMP: ${{ secrets.BUSINESS_CIRCLE_JUMP }}
-          SUPERMARKET_LOTTERY: ${{ secrets.SUPERMARKET_LOTTERY }}
-          SUPERMARKET_SHARECODES: ${{ secrets.SUPERMARKET_SHARECODES }}
+          EXCHANGE_EC: ${{ secrets.EXCHANGE_EC }}   #默认=京豆*1888
+          EXCHANGE_GYEC: ${{ secrets.EXCHANGE_GYEC }} #默认=1888京豆
+          FACTORAY_WANTPRODUCT_NAME: ${{ secrets.FACTORAY_WANTPRODUCT_NAME }}
+          DDFACTORY_SHARECODES: ${{ secrets.DDFACTORY_SHARECODES }}          
           #微信酱
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           #BARK推送
