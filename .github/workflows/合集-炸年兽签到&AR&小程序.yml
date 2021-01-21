@@ -8,7 +8,7 @@ on:
   schedule:
     - cron: '15 1,14 * * *'
   watch:
-  types: started
+    types: started
   repository_dispatch:
     types: jd_nian_sign
 jobs:
