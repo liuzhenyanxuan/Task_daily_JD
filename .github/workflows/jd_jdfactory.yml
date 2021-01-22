@@ -6,7 +6,7 @@ name:  jd_jdfactory 东东工厂
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0/1 * * *'
+    - cron: '0 */2 * * *'
   # watch:
   #   types: started
   repository_dispatch:
@@ -41,6 +41,7 @@ jobs:
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           FACTORAY_WANTPRODUCT_NAME: ${{ secrets.FACTORAY_WANTPRODUCT_NAME }}
           DDFACTORY_SHARECODES: ${{ secrets.DDFACTORY_SHARECODES }}
+          JDFACTORY_FORBID_ACCOUNT: ${{ secrets.JDFACTORY_FORBID_ACCOUNT }} #输入`1`代表第一个京东账号不运行，多个使用`&`连接
           #微信酱
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           #BARK推送
@@ -59,6 +60,6 @@ jobs:
           #酷推(Cool Push)推送
           QQ_SKEY: ${{ secrets.QQ_SKEY }}
           QQ_MODE: ${{ secrets.QQ_MODE }}
-                    #pushplus推送
+          #pushplus推送
           PUSH_PLUS_TOKEN: ${{ secrets.PUSH_PLUS_TOKEN }}
           PUSH_PLUS_USER: ${{ secrets.PUSH_PLUS_USER }}
