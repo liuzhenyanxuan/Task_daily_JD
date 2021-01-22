@@ -6,7 +6,7 @@ name: 合集-京豆变动&红包到期通知
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '17 1 * * *'
   watch:
     types: started
   repository_dispatch:
@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/nbzongzong/jd_scripts1207.git ~/scripts
+          git clone https://github.com/Aerozb/JD_HongBaoDetails.git ~/scripts
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -40,6 +40,7 @@ jobs:
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          HBDETAIL_NOTIFY_LEVEL: ${{ secrets.HBDETAIL_NOTIFY_LEVEL }}
           #微信酱
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           #BARK推送
