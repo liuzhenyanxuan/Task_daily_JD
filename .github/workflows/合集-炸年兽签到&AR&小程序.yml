@@ -1,12 +1,12 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 # jd_nian_sign,jd_nian_ar,jd_nian_wechat
-name:  合集-炸年兽签到/AR/小程序
+name:  合集-炸年兽签到/AR/小程序/炸年兽
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '15 1,14 * * *'
+    - cron: '15 1,16 * * *'
   watch:
     types: started
   repository_dispatch:
@@ -31,10 +31,11 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: '运行 【合集-京东炸年兽签到任务🧨/AR/小程序】'
+      - name: '运行 【合集-京东炸年兽签到任务🧨/AR/小程序/京东炸年兽🧨】'
         run: |
           cd  ~/scripts
           npm install
+          node jd_nian.js
           node jd_nian_sign.js
           node jd_nian_ar.js
           node jd_nian_wechat.js
