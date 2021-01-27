@@ -6,7 +6,7 @@ name: 神仙书院答题 jd_immortal_answer
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 1 * * *'
   # watch:
   #   types: started
   repository_dispatch:
@@ -35,6 +35,20 @@ jobs:
         run: |
           cd  ~/scripts
           npm install
+          node jd_immortal_answer.js
+          node jd_immortal_answer.js
+          node jd_immortal_answer.js
+          node jd_immortal_answer.js
+          node jd_immortal_answer.js
+          node jd_immortal_answer.js
+          node jd_immortal_answer.js
+          node jd_immortal_answer.js
+          node jd_immortal_answer.js
+          node jd_immortal_answer.js
+          node jd_immortal_answer.js
+          node jd_immortal_answer.js
+          node jd_immortal_answer.js
+          node jd_immortal_answer.js
           node jd_immortal_answer.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
