@@ -1,8 +1,8 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-# jd_jdzz,jd_cash,jd_lotteryMachine,jd_rankingList,jd_shop,jd_small_home
+# jd_jdzz,jd_cash,jd_lotteryMachine,jd_rankingList,jd_shop,jd_small_home,jd_necklace
 
-name:   合集-京东赚赚&签到领现金&抽奖机&排行榜&进店领豆&东东小窝
+name:   合集-京东赚赚&签到领现金&抽奖机&排行榜&进店领豆&东东小窝&点点券
 
 on:
   workflow_dispatch:
@@ -32,7 +32,7 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: '运行 【京东赚赚&签到领现金&京东抽奖机&京东排行榜&东东小窝】'
+      - name: '运行 【京东赚赚&签到领现金&京东抽奖机&京东排行榜&东东小窝&点点券】'
         run: |  
           cd ~/scripts
           npm install 
@@ -41,7 +41,8 @@ jobs:
           node jd_lotteryMachine.js
           node jd_rankingList.js
           node jd_shop.js 
-          node jd_small_home.js          
+          node jd_small_home.js    
+          node jd_necklace.js           
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
