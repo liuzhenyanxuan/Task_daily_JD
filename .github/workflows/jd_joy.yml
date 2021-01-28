@@ -42,6 +42,7 @@ jobs:
           JOY_FEED_COUNT: ${{ secrets.JOY_FEED_COUNT }}
           JOY_RUN_FLAG: ${{ secrets.JOY_RUN_FLAG }}
           JOY_TEAM_LEVEL: ${{ secrets.JOY_TEAM_LEVEL }}
+          JOY_RUN_NOTIFY: ${{ secrets.JOY_RUN_NOTIFY }}
           #微信酱
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           #BARK推送
