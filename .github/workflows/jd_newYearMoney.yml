@@ -41,7 +41,8 @@ jobs:
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           
           JDNY_SHARECODES: ${{ secrets.JDNY_SHARECODES }}
-          
+          JDNY_SENDACCOUNT: ${{ secrets.JDNY_SENDACCOUNT }}
+          JDNY_RECEIVEACCOUNT: ${{ secrets.JDNY_SHARECODES }}
           #微信酱
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           #BARK推送
