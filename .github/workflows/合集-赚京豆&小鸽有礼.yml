@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 # jd_syj,jd_super_box,jd_xg,jd_xgyl
-name: 合集-赚京豆&小鸽&小鸽有礼[2021-2-19 end]
+name: 合集-赚京豆&小鸽有礼[2021-2-28 end]
 
 on:
   workflow_dispatch:
@@ -31,12 +31,11 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: '运行 【赚京豆&小鸽&小鸽有礼】'
+      - name: '运行 【赚京豆&小鸽有礼】'
         run: |  
           cd ~/scripts
           npm install 
           node jd_syj.js
-          node jd_xg.js
           node jd_xgyl.js
 
         env:
