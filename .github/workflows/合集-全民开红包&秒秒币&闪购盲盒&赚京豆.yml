@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-# jd_syj,jd_super_box,jd_xg,jd_xgyl
-name: 合集-赚京豆&小鸽有礼[2021-2-28 end]
+
+name: 合集-全民开红包&秒秒币&闪购盲盒&赚京豆
 
 on:
   workflow_dispatch:
@@ -10,7 +10,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: syj
+    types: redPacket
 jobs:
   build:
 
@@ -31,18 +31,18 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: '运行 【赚京豆&小鸽有礼】'
-        run: |  
-          cd ~/scripts
-          npm install 
-          node jd_syj.js
-          node jd_xgyl.js
-
+      - name: '运行 【全民开红包&京东秒秒币&闪购盲盒$赚京豆】'
+        run: |
+          cd  ~/scripts
+          npm install
+          node jd_redPacket.js
+          node jd_ms.js
+          node jd_sgmh.js  
+          node jd_syj.js          
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
-          JDSUPERBOX_SHARECODES: ${{ secrets.JDSUPERBOX_SHARECODES }}
-          
+          JDSGMH_SHARECODES: ${{ secrets.JDSGMH_SHARECODES }}
           #微信酱
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           #BARK推送
