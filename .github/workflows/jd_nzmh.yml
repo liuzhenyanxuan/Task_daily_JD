@@ -1,12 +1,12 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: jd_nzmh 女装盲盒2-25
+name: jd_nzmh 女装盲盒3-8
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 17 19-25 2 *'
+    - cron: '0 17 * * *'
   # watch:
   #   types: started
   repository_dispatch:
