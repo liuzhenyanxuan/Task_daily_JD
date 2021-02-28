@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 # jd_speed，jx_cfd
-name:  合集-天天加速&财富岛
+name:  jd_cfd 京喜财富岛
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '33 */3 * * *'
+    - cron: '33 0,5,11 * * *'
   watch:
     types: started
   repository_dispatch:
-    types: speed
+    types: jd_cfd
 jobs:
   build:
 
@@ -31,17 +31,16 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: '运行 【天天加速&jx_cfd】'
+      - name: '运行 【京喜财富岛】'
         run: |
           cd  ~/scripts
           npm install
-          node jd_speed.js
           # wget https://raw.githubusercontent.com/MoPoQAQ/Script/main/Me/jx_cfd.js
-          node jx_cfd.js
+          node jd_cfd.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
-          JXNCTOKENS: ${{ secrets.JXNCTOKENS }} #For财富岛，app专属种子时需要
+          JDCFD_SHARECODES: ${{ secrets.JDCFD_SHARECODES }} #For财富岛，app专属种子时需要
           #微信酱
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           #BARK推送
