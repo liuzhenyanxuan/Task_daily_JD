@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-# jd_bean_sign,jx_sign,jd_car,jd_kd,jd_club_lottery,jd_pigPet
-name: 合集-京豆_京喜_快递签到&京东汽车&摇京豆&京东金融养猪猪
+
+name: jd_bean_sign 京东多合一签到
 
 on:
   workflow_dispatch:
   schedule:
     - cron: '0 16 * * *'
-  watch:
-    types: started
+  # watch:
+  #       types: started
   repository_dispatch:
-    types: sgin
+    types: jd_bean_sign
 jobs:
   build:
 
@@ -31,22 +31,14 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: '运行 【京喜签到&京东汽车&京东快递签到&摇京豆脚本&京东金融养猪猪】'
-        run: |  
-          cd ~/scripts
-          npm install 
-          #node jd_bean_sign.js
-          node jx_sign.js
-          node jd_car.js
-          node jd_kd.js
-          node jd_club_lottery.js
-          node jd_pigPet.js
+      - name: '运行 【京东多合一签到】'
+        run: |
+          cd  ~/scripts
+          npm install
+          node jd_bean_sign.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
-          JD_BEAN_STOP: ${{secrets.JD_BEAN_STOP}} #自定义延迟签到,单位毫秒. 默认分批并发无延迟. 延迟作用于每个签到接口, 如填入延迟则切换顺序签到(耗时较长)
-          JD_BEAN_SIGN_STOP_NOTIFY: ${{secrets.JD_BEAN_SIGN_STOP_NOTIFY}}
-          JD_BEAN_SIGN_NOTIFY_SIMPLE: ${{secrets.JD_BEAN_SIGN_NOTIFY_SIMPLE}}
           #微信酱
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           #BARK推送
