@@ -6,7 +6,7 @@ name: jd_global 环球挑战赛 2021-02-22
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 1,4,12,13 2-22 2 *'
+    - cron: '0 1,4,12,13 8-31 3 *'
   # watch:
   #   types: started
   repository_dispatch:
