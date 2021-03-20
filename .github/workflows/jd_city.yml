@@ -5,8 +5,8 @@ name: 城城领现金(手动) 3-24
 
 on:
   workflow_dispatch:
-  # schedule:
-    # - cron: '0 */3 19-24 3 *'
+  schedule:
+    - cron: '0 4,10 19-24 3 *'
 
   # watch:
   #   types: started
