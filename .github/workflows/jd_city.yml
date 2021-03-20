@@ -1,16 +1,17 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: jd_xtg 手机尚学季 2021-03-19
+name: jd_city 城城领现金 3-24
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 21,23 15-19 3 *'
+    - cron: '0 */3 19-24 3 *'
+
   # watch:
   #   types: started
   repository_dispatch:
-    types: jd_xtg
+    types: jd_city
 jobs:
   build:
 
@@ -31,16 +32,17 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: '运行 【手机尚学季】'
+      - name: '运行 【城城领现金】'
         run: |
           cd  ~/scripts
           npm install
-          node jd_xtg.js
+          node jd_city.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          CITY_SHARECODES: ${{ secrets.CITY_SHARECODES }}
+          JD_CITY_EXCHANGE: ${{ secrets.JD_CITY_EXCHANGE }}
           
-          JDGLOBAL_SHARECODES: ${{ secrets.JDGLOBAL_SHARECODES }}
           #微信酱
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           #BARK推送
