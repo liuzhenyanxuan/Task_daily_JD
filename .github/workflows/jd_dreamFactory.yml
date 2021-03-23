@@ -6,7 +6,7 @@ name: jd_dreamFactory 京喜工厂
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: '0 */3 * * *'
  
 
   # watch:
