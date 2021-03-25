@@ -25,8 +25,8 @@ jobs:
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
-        node-version: '12.x'
-        registry-url: 'https://registry.npmjs.org'
+          node-version: '12.x'
+          registry-url: 'https://registry.npmjs.org'
       - name: Cache node_modules
         uses: actions/cache@v2 # 使用 GitHub 官方的缓存 Action。
         env:
