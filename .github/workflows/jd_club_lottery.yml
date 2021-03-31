@@ -2,12 +2,12 @@
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 #活动地址：摇京豆(京东APP首页-领京豆-摇京豆)
 
-name: jd_club_lottery 摇京豆脚本
+name: 二次执行 jd_club_lottery 摇京豆
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 16 * * *'
+    - cron: '30 14 * * *'
   # watch:
   #   types: started
   repository_dispatch:
@@ -32,7 +32,7 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: '运行 【摇京豆脚本】'
+      - name: '运行 【摇京豆】'
         run: | 
           cd ~/scripts
           npm install
