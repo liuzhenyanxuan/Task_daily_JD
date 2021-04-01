@@ -6,7 +6,7 @@ name: jd_nzmh女装盲盒4-30
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 17 22-30/1 4 *'
+    - cron: '0 15,17 22-30/1 4 *'
   # watch:
   #   types: started
   repository_dispatch:
