@@ -1,12 +1,12 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: jd_carnivalcity 手机狂欢城
+name: Local_jd_carnivalcity 手机狂欢城
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 16,0 * * *'
+  # schedule:
+    # - cron: '0 16,0 * * *'
   # watch:
   #   types: started
   repository_dispatch:
