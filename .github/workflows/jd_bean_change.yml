@@ -6,7 +6,7 @@ name: jd_bean_change 京东资产变动通知
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 16 * * *' #此处为UTC-0时间
+    - cron: '0 0 * * *' #此处为UTC-0时间
   # watch:
   #   types: started
   repository_dispatch:
