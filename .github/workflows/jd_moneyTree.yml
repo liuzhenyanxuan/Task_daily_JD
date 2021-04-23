@@ -6,7 +6,7 @@ name: jd_moneyTree 京东摇钱树
 on:
   workflow_dispatch:
   schedule:
-    - cron: '40 */2 * * *'
+    - cron: '40 0-23/2 * * *'
   # watch:
   #   types: started
   repository_dispatch:
@@ -40,6 +40,8 @@ jobs:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           MONEY_TREE_SELL_FRUIT: ${{ secrets.MONEY_TREE_SELL_FRUIT }} #摇钱树是否卖出金果,true卖出，false不卖出
+          MONEYTREE_NOTIFY_CONTROL: ${{ secrets.MONEYTREE_NOTIFY_CONTROL }}
+          
           #微信酱
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           #BARK推送
