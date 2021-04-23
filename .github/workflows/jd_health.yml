@@ -6,7 +6,7 @@ name: jd_health 东东健康社区
 on:
   workflow_dispatch:
   schedule:
-   - cron: '15 0-23/4 * * *'
+   - cron: '15 14,16 * * *'
   # watch:
   #   types: started
   repository_dispatch:
